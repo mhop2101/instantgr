@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instantgramclonexyz/state/auth/providers/auth_state_provider.dart';
 import 'package:instantgramclonexyz/state/auth/providers/create_account_provider.dart';
-import 'package:instantgramclonexyz/views/components/animations/empty_contents_with_text_animation_view.dart';
 import 'package:instantgramclonexyz/views/constants/app_colors.dart';
 import 'package:instantgramclonexyz/views/constants/strings.dart';
 import 'package:instantgramclonexyz/views/login/components/divider_with_margins.dart';

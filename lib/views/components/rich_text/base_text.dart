@@ -1,7 +1,4 @@
-import 'dart:ui';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:instantgramclonexyz/views/components/rich_text/link_text.dart';
 
 @immutable

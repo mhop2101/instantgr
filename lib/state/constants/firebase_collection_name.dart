@@ -7,5 +7,6 @@ class FirebaseCollectionName {
   static const posts = 'posts';
   static const users = 'users';
   static const likes = 'likes';
+  static const images = 'images';
   const FirebaseCollectionName._();
 }

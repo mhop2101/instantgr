@@ -3,7 +3,7 @@ import 'package:instantgramclonexyz/state/auth/backend/authenticator.dart';
 import 'package:instantgramclonexyz/state/auth/models/auth_result.dart';
 import 'package:instantgramclonexyz/state/auth/models/auth_state.dart';
 import 'package:instantgramclonexyz/state/posts/typedefs/user_id.dart';
-import 'package:instantgramclonexyz/state/user_info/backend/user_info_storage.dart'; // Add this line to import the Authenticator class
+import 'package:instantgramclonexyz/state/user_info/backend/user_info_storage.dart';
 
 class AuthStateNotifier extends StateNotifier<AuthState> {
   final _authenticator = const Authenticator();

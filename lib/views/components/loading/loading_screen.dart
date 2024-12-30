@@ -39,6 +39,7 @@ class LoadingScreen {
     final overlay = OverlayEntry(
       builder: (context) {
         return Material(
+          // ignore: deprecated_member_use
           color: Colors.black.withOpacity(0.5),
           child: Center(
             child: Container(
