@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:instantgramclonexyz/state/constants/firebase_collection_name.dart';
 import 'package:instantgramclonexyz/state/constants/firebase_field_name.dart';
 import 'package:instantgramclonexyz/state/posts/typedefs/user_id.dart';
-import 'package:instantgramclonexyz/state/user_info/models/user_info.dart';
+import 'package:instantgramclonexyz/state/user_info/models/user_info_payload.dart';
 
 @immutable
 class UserInfoStorage {
