@@ -8,5 +8,6 @@ class FirebaseCollectionName {
   static const users = 'users';
   static const likes = 'likes';
   static const images = 'images';
+  static const videos = 'videos';
   const FirebaseCollectionName._();
 }

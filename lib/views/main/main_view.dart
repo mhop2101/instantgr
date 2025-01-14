@@ -4,10 +4,12 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instantgramclonexyz/state/auth/providers/auth_state_provider.dart';
 import 'package:instantgramclonexyz/state/image_upload/helpers/image_picker_helper.dart';
 import 'package:instantgramclonexyz/state/image_upload/models/file_type.dart';
+import 'package:instantgramclonexyz/state/image_upload/providers/image_or_video_pick_provider.dart';
 import 'package:instantgramclonexyz/state/post_settings/providers/post_settings_provider.dart';
 import 'package:instantgramclonexyz/views/components/dialogs/alert_dialog_model.dart';
 import 'package:instantgramclonexyz/views/components/dialogs/logout_dialog.dart';
 import 'package:instantgramclonexyz/views/create_new_post/create_new_post_view.dart';
+import 'package:instantgramclonexyz/views/tabs/search/search_view.dart';
 import 'package:instantgramclonexyz/views/tabs/users_posts/user_posts_view.dart';
 import '../constants/strings.dart';
 
@@ -30,8 +32,14 @@ class _MainViewState extends ConsumerState<MainView> {
             IconButton(
               icon: const FaIcon(FontAwesomeIcons.film),
               onPressed: () async {
+                ref
+                    .read(imageOrVideoPickLoadingProvider.notifier)
+                    .setImageOrVideoPickerLoading(state: true);
                 final videoFile =
                     await ImagePickerHelper.pickVideoFromGallery();
+                ref
+                    .read(imageOrVideoPickLoadingProvider.notifier)
+                    .setImageOrVideoPickerLoading(state: false);
                 if (videoFile != null) {
                   final value = ref.refresh(postSettingsProvider);
                   if (!mounted) return;
@@ -50,11 +58,18 @@ class _MainViewState extends ConsumerState<MainView> {
             IconButton(
               icon: const Icon(Icons.add_photo_alternate_outlined),
               onPressed: () async {
+                ref
+                    .read(imageOrVideoPickLoadingProvider.notifier)
+                    .setImageOrVideoPickerLoading(state: true);
                 final imageFile =
                     await ImagePickerHelper.pickImageFromGallery();
+                ref
+                    .read(imageOrVideoPickLoadingProvider.notifier)
+                    .setImageOrVideoPickerLoading(state: false);
                 if (imageFile != null) {
                   final value = ref.refresh(postSettingsProvider);
                   if (!mounted) return;
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -90,7 +105,7 @@ class _MainViewState extends ConsumerState<MainView> {
         body: const TabBarView(
           children: [
             UserPostsView(),
-            UserPostsView(),
+            SearchView(),
             UserPostsView(),
           ],
         ),

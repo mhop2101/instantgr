@@ -35,6 +35,7 @@ final postCommentsProvider = StreamProvider.autoDispose
   });
 
   ref.onDispose(() {
+    sub.cancel();
     controller.close();
   });
 
